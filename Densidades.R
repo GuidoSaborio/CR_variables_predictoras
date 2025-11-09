@@ -39,7 +39,6 @@ DencaminosF <- resample(Dencaminos, bio1)
 writeRaster(DencaminosF, "results/CR_RoadDensity.asc")
 
 ### DENSIDAD DE RIOS###
-## Utilizar capa de rios150000 de Atlas2014
 rios <- st_read("source/CR_RiosOSM.shp")
 
 v1 <- vect(rios)
@@ -64,6 +63,7 @@ riosF <- resample(rios1, bio1)
 riosF <- crop(riosF, bio1)
 riosF <- mask(riosF, bio1)
 writeRaster(riosF, "results/CR_RiosDensity.asc",overwrite=TRUE)
+
 
 
 
