@@ -33,3 +33,4 @@ plot(r2)
 lines(roads)
 writeRaster(r, "results/RoadDensity4.tif")
 writeRaster(r2, "results/RoadDensity2.tif", overwrite=TRUE)
+
