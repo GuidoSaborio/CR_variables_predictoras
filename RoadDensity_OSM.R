@@ -25,12 +25,16 @@ r[as.integer(names(x))] <- as.vector(x)
 
 plot(r)
 lines(roads)
+writeRaster(r, "results/RoadDensity4.tif")
+
+# densidad de caminos con misma resolución de la capa de Tipos de bosque de SINAC
 
 t <- rast("source/TiposBosqueCR2021.tif")
 r2 <- resample(r, t)
 
 plot(r2)
 lines(roads)
-writeRaster(r, "results/RoadDensity4.tif")
+
 writeRaster(r2, "results/RoadDensity2.tif", overwrite=TRUE)
+
 
