@@ -15,7 +15,7 @@ bio1 <- mask(bio1, cr)
 ### DENSIDAD DE CAMINOS###
 
 ## Utilizar capa de caminos de Atlas2014
-caminos <- st_read("source/redcaminos2014crtm05.shp", crs= 5367)
+caminos <- st_read("source/redcaminos2014crtm05.shp", crs= 5367) ## fuente de datos está como un zip file en el repositorio
 caminos <- st_transform(caminos, crs = 4326)
 
 
@@ -47,3 +47,4 @@ DencaminosF <- mask(Dencaminos2, bio1)
 plot(DencaminosF)
 
 writeRaster(DencaminosF, "results/DensidadCaminos_atlas.asc",overwrite=TRUE)
+
